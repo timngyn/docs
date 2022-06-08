@@ -7,6 +7,9 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    # We run tests only if it's pull request not from a fork (ie. internal PR)
+    if: |
+      (github.event.pull_request.head.repo.full_name == github.repository)
     steps:
       - name: Checkout Repo
         uses: actions/checkout@main
