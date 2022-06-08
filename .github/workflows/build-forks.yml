@@ -9,7 +9,7 @@ permissions:
   contents: read
 jobs:
   build:
-    name: Build
+    name: Build Forks
     runs-on: ubuntu-latest
     # We run tests only if it's:
     #   1) pull request not from a fork (ie. internal PR), or
