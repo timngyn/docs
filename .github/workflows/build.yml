@@ -9,6 +9,7 @@ permissions:
   contents: read
 jobs:
   setup:
+    name: Setup
     runs-on: ubuntu-latest
     # We run tests only if it's:
     #   1) pull request not from a fork (ie. internal PR), or
@@ -28,6 +29,7 @@ jobs:
             github.issues.removeLabel({ owner, repo, issue_number, name: label });
   build:
     name: Build
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
