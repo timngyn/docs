@@ -1,0 +1,21 @@
+pull_request_rules:
+  - name: Add redirects label if PR body is checked
+    conditions:
+      - body~=(?m)^\[X\] Redirects needed?
+    actions:
+      label:
+        add:
+            - redirects needed
+  - name: Comment on PR asking for redirects
+    conditions:
+      - label="redirects needed"
+    actions:
+      comment:
+        message: |
+            @{{author}}, thank you for requesting to add redirects!
+            
+            What is the source address of the redirect? (Where are you trying to redirect from?)
+    
+            What is the target address of the redirect? (Where are you trying to redirect to?)
+    
+            Type of redirect? 301 - permanent redirect or 302 - temporary redirect? (More info on Amplify Hosting redirects here: https://docs.aws.amazon.com/amplify/latest/userguide/redirects.html)
