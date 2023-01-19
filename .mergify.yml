@@ -1,7 +1,7 @@
 pull_request_rules:
   - name: Add redirects label if PR body is checked
     conditions:
-      - body~=(?m)^- \[X\] Redirects needed?
+      - body~=(?m)^- \[X\] Redirects needed\?
     actions:
       label:
         add:
