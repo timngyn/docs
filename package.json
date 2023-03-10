@@ -24,6 +24,7 @@
     "@emotion/styled": "^11.3.0",
     "@mdx-js/mdx": "^2.0.0",
     "@octokit/rest": "^19.0.7",
+    "@stackblitz/sdk": "^1.8.2",
     "algoliasearch": "^4.12.1",
     "array-flatten": "^3.0.0",
     "aws-amplify": "^5.0.5",

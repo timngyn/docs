@@ -25,7 +25,7 @@ Authorization modes: (API key (default, expiration time: 7 days from now))
 Using service: Cognito, provided by: awscloudformation
 The current configured provider is Amazon Cognito.
 
-? Do you want to use the default authentication and security configuration? Default configuration: (Default configuration) 
+? Do you want to use the default authentication and security configuration? Default configuration: (Default configuration)
 
 Warning: you will not be able to edit these selections.
 
@@ -42,7 +42,7 @@ Warning: you will not be able to edit these selections.
 ? Here is the GraphQL API that we will create. Select a setting to edit or continue: (Continue)
 ? Choose a schema template: (Single object with fields (e.g., “Todo” with ID, name, description))
 
-# You should see that the GraphQL schema compiled successfully and the location for the file. 
+# You should see that the GraphQL schema compiled successfully and the location for the file.
 
 ? Do you want to edit the schema now? (Yes)
 
@@ -52,15 +52,9 @@ The CLI will open this GraphQL schema in your text editor. Replace the example s
 
 **amplify/backend/api/nextamplified/schema.graphql**
 
-```graphql
-type Post
-  @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
-  id: ID!
-  title: String!
-  content: String!
-}
-```
+<iframe src="https://stackblitz.com/github/timngyn/sample-app?embed=1&file=amplify/backend/api/nextamplified/schema.graphql&hideExplorer=1&hideNavigation=1&view=editor"></iframe>
+
+<StackBlitzEmbed vmId="vm1" github={"timngyn/sample-app"} openFile={"amplify/backend/api/nextamplified/schema.graphql"}></StackBlitzEmbed>
 
 The schema generated is for a blog app. You'll notice a directive on the `Post` type of `@model`. This directive is part of the [GraphQL transform](/cli/graphql/data-modeling) library of Amplify.
 
@@ -222,118 +216,7 @@ import '@aws-amplify/ui-react/styles.css';
 
 Open **pages/index.js** and replace it with the following code:
 
-```jsx
-// pages/index.js
-import { Authenticator } from '@aws-amplify/ui-react';
-import { Amplify, API, Auth, withSSRContext } from 'aws-amplify';
-import Head from 'next/head';
-import awsExports from '../src/aws-exports';
-import { createPost } from '../src/graphql/mutations';
-import { listPosts } from '../src/graphql/queries';
-import styles from '../styles/Home.module.css';
-
-Amplify.configure({ ...awsExports, ssr: true });
-
-export async function getServerSideProps({ req }) {
-  const SSR = withSSRContext({ req });
-  
-  try {
-    const response = await SSR.API.graphql({ query: listPosts, authMode: 'API_KEY' });
-    return {
-      props: {
-        posts: response.data.listPosts.items,
-      },
-    };
-  } catch (err) {
-    console.log(err);
-    return {
-      props: {},
-    };
-  }
-}
-
-async function handleCreatePost(event) {
-  event.preventDefault();
-
-  const form = new FormData(event.target);
-
-  try {
-    const { data } = await API.graphql({
-      authMode: 'AMAZON_COGNITO_USER_POOLS',
-      query: createPost,
-      variables: {
-        input: {
-          title: form.get('title'),
-          content: form.get('content')
-        }
-      }
-    });
-
-    window.location.href = `/posts/${data.createPost.id}`;
-  } catch ({ errors }) {
-    console.error(...errors);
-    throw new Error(errors[0].message);
-  }
-}
-
-export default function Home({ posts = [] }) {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Amplify + Next.js</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>Amplify + Next.js</h1>
-
-        <p className={styles.description}>
-          <code className={styles.code}>{posts.length}</code>
-          posts
-        </p>
-
-        <div className={styles.grid}>
-          {posts.map((post) => (
-            <a className={styles.card} href={`/posts/${post.id}`} key={post.id}>
-              <h3>{post.title}</h3>
-              <p>{post.content}</p>
-            </a>
-          ))}
-
-          <div className={styles.card}>
-            <h3 className={styles.title}>New Post</h3>
-
-            <Authenticator>
-              <form onSubmit={handleCreatePost}>
-                <fieldset>
-                  <legend>Title</legend>
-                  <input
-                    defaultValue={`Today, ${new Date().toLocaleTimeString()}`}
-                    name="title"
-                  />
-                </fieldset>
-
-                <fieldset>
-                  <legend>Content</legend>
-                  <textarea
-                    defaultValue="I built an Amplify project with Next.js!"
-                    name="content"
-                  />
-                </fieldset>
-
-                <button>Create Post</button>
-                <button type="button" onClick={() => Auth.signOut()}>
-                  Sign out
-                </button>
-              </form>
-            </Authenticator>
-          </div>
-        </div>
-      </main>
-    </div>
-  );
-}
-```
+<StackBlitzEmbed vmId="vm2"  github={"timngyn/sample-app"} openFile={"pages/index.tsx:L3-L10"}></StackBlitzEmbed>
 
 Let's walk through some of this file:
 
@@ -382,7 +265,7 @@ export async function getServerSideProps({ req, params }) {
       id: params.id
     }
   });
-  return { 
+  return {
     props: {
       post: data.getPost
     }
@@ -442,7 +325,7 @@ Let's walk through some of this file:
 
 - **Amplify.configure** – For authenticated requests to work on the server, your client has to be configured with `ssr: true` to make credentials available on subsequent requests.
 
-- **getServerSideProps** - This will only run on the server-side and allows for fetching of data as we make the request.  Here, you use params.id to query for that specific post with API.graphql and await the response.
+- **getServerSideProps** - This will only run on the server-side and allows for fetching of data as we make the request. Here, you use params.id to query for that specific post with API.graphql and await the response.
 
 - **Post** – `Post` is a functional component that renders the provided prop `post`. Because `fallback: true` was specified above, you have to account for a "loading" state while a new post may be fetched.
 
