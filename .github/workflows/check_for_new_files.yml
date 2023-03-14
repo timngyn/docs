@@ -22,7 +22,7 @@ jobs:
         run: |
           git fetch origin main
           echo "NEW_FILES<<EOF" >> $GITHUB_ENV
-          echo $(git diff --name-only --diff-filter=A origin/main ${{ env.GITHUB_PULL_REQUEST_HEAD_SHA }}) -- ${{ env.DIFF_DIRECTORIES }} >> $GITHUB_ENV
+          echo $(git diff --name-only --diff-filter=A origin/main -- ${{ env.DIFF_DIRECTORIES }} ${{ env.GITHUB_PULL_REQUEST_HEAD_SHA }}) -- ${{ env.DIFF_DIRECTORIES }} >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: Print out added files
         run: |
