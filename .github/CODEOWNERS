@@ -83,15 +83,15 @@
 /src/pages/start/sample-apps/todo-app/q/integration @timngyn-acc2
 
 #Flutter
-/src/fragments/**/**/flutter @aws-amplify/amplify-flutter @timngyn-acc2
-/src/fragments/lib-v1/project-setup/native_common/prereq/flutter_null_safety.mdx @aws-amplify/amplify-flutter @timngyn-acc2
-/src/fragments/lib/flutter.mdx @aws-amplify/amplify-flutter @timngyn-acc2
-/src/fragments/lib/project-setup/native_common/prereq/flutter_null_safety.mdx @aws-amplify/amplify-flutter @timngyn-acc2
-/src/fragments/ui/auth/developer-preview-callout-flutter.mdx @aws-amplify/amplify-flutter @timngyn-acc2
-/src/fragments/ui/flutter/installation.mdx @aws-amplify/amplify-flutter @timngyn-acc2
+/src/fragments/**/**/flutter @timngyn-acc2
+/src/fragments/lib-v1/project-setup/native_common/prereq/flutter_null_safety.mdx @timngyn-acc2
+/src/fragments/lib/flutter.mdx @timngyn-acc2
+/src/fragments/lib/project-setup/native_common/prereq/flutter_null_safety.mdx @timngyn-acc2
+/src/fragments/ui/auth/developer-preview-callout-flutter.mdx @timngyn-acc2
+/src/fragments/ui/flutter/installation.mdx @timngyn-acc2
 
 #iOS
-/src/fragments/**/**/ios @aws-amplify/amplify-ios @timngyn-acc1
+/src/fragments/**/**/ios @timngyn-acc1
 /src/fragments/guides/datastore/parallel-processing-ios.mdx @timngyn-acc1
 /src/fragments/guides/location-service/setting-up-your-app-ios.mdx @timngyn-acc1
 /src/fragments/guides/location-service/tracking-device-location-ios.mdx @timngyn-acc1
@@ -114,4 +114,4 @@
 /src/pages/**/hosting @timngyn-acc1
 
 #UI
-/src/**/ui @aws-amplify/amplify-ui @timngyn-acc2
+/src/**/ui @timngyn-acc2
