@@ -56,7 +56,7 @@ jobs:
 
             const { issue: { number: issue_number }, repo: { owner, repo } } = context;
             if (filesNotInCodeowners.length > 0) {
-              const needCodeownersUpdateComment = `@aws-amplify/documentation-team, CODEOWNERS need to be updated because these new files are not covered:\n
+              const needCodeownersUpdateComment = `CODEOWNERS need to be updated because these new files are not covered:\n
               ${filesNotInCodeowners.map(e => `- ${e}\n`)}
              `;
               github.rest.issues.createComment({owner, repo, issue_number, body: needCodeownersUpdateComment})
