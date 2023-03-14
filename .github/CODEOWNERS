@@ -1,117 +1,117 @@
 #Docs Engineering start
-/*.* @aws-amplify/documentation-team
-/src/components @aws-amplify/documentation-team 
-/src/constants @aws-amplify/documentation-team 
-/src/directory @aws-amplify/documentation-team 
-/src/pages/_app.tsx @aws-amplify/documentation-team 
-/src/pages/_document.tsx @aws-amplify/documentation-team 
-/src/pages/404.tsx @aws-amplify/documentation-team 
-/src/pages/ChooseFilterPage.tsx @aws-amplify/documentation-team 
-/src/pages/guides/q/platform @aws-amplify/documentation-team 
-/src/pages/index.tsx @aws-amplify/documentation-team
-/src/pages/start/q/integration @aws-amplify/documentation-team
-/src/plugins @aws-amplify/documentation-team 
-/src/public @aws-amplify/documentation-team 
-/src/styles @aws-amplify/documentation-team 
-/src/utils @aws-amplify/documentation-team
+/*.* @timngyn
+/src/components @timngyn 
+/src/constants @timngyn 
+/src/directory @timngyn 
+/src/pages/_app.tsx @timngyn 
+/src/pages/_document.tsx @timngyn 
+/src/pages/404.tsx @timngyn 
+/src/pages/ChooseFilterPage.tsx @timngyn 
+/src/pages/guides/q/platform @timngyn 
+/src/pages/index.tsx @timngyn
+/src/pages/start/q/integration @timngyn
+/src/plugins @timngyn 
+/src/public @timngyn 
+/src/styles @timngyn 
+/src/utils @timngyn
 #Docs Engineering end
  
 #JS
-/src/**/**/analytics @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/api-graphql @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/api-rest @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/auth @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/authentication @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/graphqlapi @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/in-app-messaging @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/interactions @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/predictions @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/project-setup @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/pubsub @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/push-notifications @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/restapi @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/storage @aws-amplify/amplify-js @abdallahshaban557
-/src/**/**/utilities @aws-amplify/amplify-js @abdallahshaban557
-/src/**/lib @aws-amplify/amplify-js @abdallahshaban557
-/src/**/lib-v1 @aws-amplify/amplify-js @abdallahshaban557
-/src/**/sdk @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/**/**/**/js @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/**/**/common @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/**/**/js @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/**/**/native_common @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/lib/js.mdx @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/lib/reactnative.mdx @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/react.mdx @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/reactnative.mdx @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/start/getting-started/angular @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/start/getting-started/next @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/start/getting-started/react @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/start/getting-started/reactnative @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/start/getting-started/vanillajs @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/start/getting-started/vue @aws-amplify/amplify-js @abdallahshaban557
-/src/fragments/web.mdx @aws-amplify/amplify-js @abdallahshaban557
-/src/pages/guides/functions @aws-amplify/amplify-js @abdallahshaban557
-/src/pages/start/getting-started @aws-amplify/amplify-js @abdallahshaban557
+/src/**/**/analytics @timngyn-acc1
+/src/**/**/api-graphql @timngyn-acc1
+/src/**/**/api-rest @timngyn-acc1
+/src/**/**/auth @timngyn-acc1
+/src/**/**/authentication @timngyn-acc1
+/src/**/**/graphqlapi @timngyn-acc1
+/src/**/**/in-app-messaging @timngyn-acc1
+/src/**/**/interactions @timngyn-acc1
+/src/**/**/predictions @timngyn-acc1
+/src/**/**/project-setup @timngyn-acc1
+/src/**/**/pubsub @timngyn-acc1
+/src/**/**/push-notifications @timngyn-acc1
+/src/**/**/restapi @timngyn-acc1
+/src/**/**/storage @timngyn-acc1
+/src/**/**/utilities @timngyn-acc1
+/src/**/lib @timngyn-acc1
+/src/**/lib-v1 @timngyn-acc1
+/src/**/sdk @timngyn-acc1
+/src/fragments/**/**/**/js @timngyn-acc1
+/src/fragments/**/**/common @timngyn-acc1
+/src/fragments/**/**/js @timngyn-acc1
+/src/fragments/**/**/native_common @timngyn-acc1
+/src/fragments/lib/js.mdx @timngyn-acc1
+/src/fragments/lib/reactnative.mdx @timngyn-acc1
+/src/fragments/react.mdx @timngyn-acc1
+/src/fragments/reactnative.mdx @timngyn-acc1
+/src/fragments/start/getting-started/angular @timngyn-acc1
+/src/fragments/start/getting-started/next @timngyn-acc1
+/src/fragments/start/getting-started/react @timngyn-acc1
+/src/fragments/start/getting-started/reactnative @timngyn-acc1
+/src/fragments/start/getting-started/vanillajs @timngyn-acc1
+/src/fragments/start/getting-started/vue @timngyn-acc1
+/src/fragments/web.mdx @timngyn-acc1
+/src/pages/guides/functions @timngyn-acc1
+/src/pages/start/getting-started @timngyn-acc1
 
 #DataStore
-/src/fragments/**/datastore @renebrandel
-/src/pages/**/datastore @renebrandel
+/src/fragments/**/datastore @timngyn-acc1
+/src/pages/**/datastore @timngyn-acc1
 
 #Geo
-/src/fragments/**/geo @aws-amplify/amplify-geo @hdworld11
-/src/pages/**/geo @aws-amplify/amplify-geo @hdworld11
+/src/fragments/**/geo @timngyn-acc1
+/src/pages/**/geo @timngyn-acc1
 
 #CLI
-/src/**/cli @aws-amplify/amplify-cli
-/src/**/cli-legacy @aws-amplify/amplify-cli
-/src/fragments/cli-install-block.mdx @aws-amplify/amplify-cli
-/src/fragments/lib-v1/project-setup/native_common/prereq/cliInstall.mdx @aws-amplify/amplify-cli
-/src/fragments/pull-cli-studio.mdx @aws-amplify/amplify-cli
-/src/pages/console/adminui/extend-cli.mdx @aws-amplify/amplify-cli
+/src/**/cli @timngyn-acc2
+/src/**/cli-legacy @timngyn-acc2
+/src/fragments/cli-install-block.mdx @timngyn-acc2
+/src/fragments/lib-v1/project-setup/native_common/prereq/cliInstall.mdx @timngyn-acc2
+/src/fragments/pull-cli-studio.mdx @timngyn-acc2
+/src/pages/console/adminui/extend-cli.mdx @timngyn-acc2
 
 #Android
-/src/fragments/**/**/android @aws-amplify/amplify-android @hdworld11
-/src/fragments/android.mdx @aws-amplify/amplify-android @hdworld11
-/src/fragments/guides/location-service/setting-up-your-app-android.mdx @aws-amplify/amplify-android @hdworld11
-/src/fragments/guides/location-service/tracking-device-location-android.mdx @aws-amplify/amplify-android @hdworld11
-/src/fragments/lib-v1/android-sdk.mdx @aws-amplify/amplify-android @hdworld11
-/src/fragments/lib-v1/android.mdx @aws-amplify/amplify-android @hdworld11
-/src/fragments/lib/android-escape-hatch-warning.mdx @aws-amplify/amplify-android @hdworld11
-/src/fragments/lib/android-kotlin-java-interop.mdx @aws-amplify/amplify-android @hdworld11
-/src/fragments/lib/android-sdk.mdx @aws-amplify/amplify-android @hdworld11
-/src/fragments/lib/android.mdx @aws-amplify/amplify-android @hdworld11
-/src/pages/start/sample-apps/todo-app/q/integration @aws-amplify/amplify-android @hdworld11
+/src/fragments/**/**/android @timngyn-acc2
+/src/fragments/android.mdx @timngyn-acc2
+/src/fragments/guides/location-service/setting-up-your-app-android.mdx @timngyn-acc2
+/src/fragments/guides/location-service/tracking-device-location-android.mdx @timngyn-acc2
+/src/fragments/lib-v1/android-sdk.mdx @timngyn-acc2
+/src/fragments/lib-v1/android.mdx @timngyn-acc2
+/src/fragments/lib/android-escape-hatch-warning.mdx @timngyn-acc2
+/src/fragments/lib/android-kotlin-java-interop.mdx @timngyn-acc2
+/src/fragments/lib/android-sdk.mdx @timngyn-acc2
+/src/fragments/lib/android.mdx @timngyn-acc2
+/src/pages/start/sample-apps/todo-app/q/integration @timngyn-acc2
 
 #Flutter
-/src/fragments/**/**/flutter @aws-amplify/amplify-flutter @abdallahshaban557
-/src/fragments/lib-v1/project-setup/native_common/prereq/flutter_null_safety.mdx @aws-amplify/amplify-flutter @abdallahshaban557
-/src/fragments/lib/flutter.mdx @aws-amplify/amplify-flutter @abdallahshaban557
-/src/fragments/lib/project-setup/native_common/prereq/flutter_null_safety.mdx @aws-amplify/amplify-flutter @abdallahshaban557
-/src/fragments/ui/auth/developer-preview-callout-flutter.mdx @aws-amplify/amplify-flutter @abdallahshaban557
-/src/fragments/ui/flutter/installation.mdx @aws-amplify/amplify-flutter @abdallahshaban557
+/src/fragments/**/**/flutter @timngyn-acc2
+/src/fragments/lib-v1/project-setup/native_common/prereq/flutter_null_safety.mdx @timngyn-acc2
+/src/fragments/lib/flutter.mdx @timngyn-acc2
+/src/fragments/lib/project-setup/native_common/prereq/flutter_null_safety.mdx @timngyn-acc2
+/src/fragments/ui/auth/developer-preview-callout-flutter.mdx @timngyn-acc2
+/src/fragments/ui/flutter/installation.mdx @timngyn-acc2
 
 #iOS
-/src/fragments/**/**/ios @aws-amplify/amplify-ios @hdworld11
-/src/fragments/guides/datastore/parallel-processing-ios.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/guides/location-service/setting-up-your-app-ios.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/guides/location-service/tracking-device-location-ios.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/lib-v1/ios-sdk.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/lib-v1/ios-spm.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/lib-v1/ios.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/lib/ios-escape-hatch-warning.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/lib/ios-prereq-category.mdx @aws-amplify/amplify-ios @hdworld11 @hdworld11
-/src/fragments/lib/ios-prereq-xcode.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/lib/ios-sdk.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/lib/ios-spm.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/lib/ios.mdx @aws-amplify/amplify-ios @hdworld11
-/src/fragments/sdk/sdk-api-ref/ios.mdx @aws-amplify/amplify-ios @hdworld11 @hdworld11
+/src/fragments/**/**/ios @timngyn-acc1
+/src/fragments/guides/datastore/parallel-processing-ios.mdx @timngyn-acc1
+/src/fragments/guides/location-service/setting-up-your-app-ios.mdx @timngyn-acc1
+/src/fragments/guides/location-service/tracking-device-location-ios.mdx @timngyn-acc1
+/src/fragments/lib-v1/ios-sdk.mdx @timngyn-acc1
+/src/fragments/lib-v1/ios-spm.mdx @timngyn-acc1
+/src/fragments/lib-v1/ios.mdx @timngyn-acc1
+/src/fragments/lib/ios-escape-hatch-warning.mdx @timngyn-acc1
+/src/fragments/lib/ios-prereq-category.mdx @timngyn-acc1
+/src/fragments/lib/ios-prereq-xcode.mdx @timngyn-acc1
+/src/fragments/lib/ios-sdk.mdx @timngyn-acc1
+/src/fragments/lib/ios-spm.mdx @timngyn-acc1
+/src/fragments/lib/ios.mdx @timngyn-acc1
+/src/fragments/sdk/sdk-api-ref/ios.mdx @timngyn-acc1
 
 #Studio
-/src/pages/console @aws-amplify/amplify-studio-uibuilder @wrpeck
+/src/pages/console @timngyn-acc1
 
 #Hosting
-/src/fragments/**/hosting @aws-amplify/amplify-hosting @michrome
-/src/pages/**/hosting @aws-amplify/amplify-hosting @michrome
+/src/fragments/**/hosting @timngyn-acc1
+/src/pages/**/hosting @timngyn-acc1
 
 #UI
-/src/**/ui @aws-amplify/amplify-ui @dbanksdesign
+/src/**/ui @timngyn-acc2
