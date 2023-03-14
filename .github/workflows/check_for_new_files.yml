@@ -17,7 +17,7 @@ jobs:
           # Minimal depth 2 so we can checkout the commit before possible merge commit.
           fetch-depth: 2
       - name: Get count of added files
-        if: "!contains(github.event.pull_request.labels.*.name, 'update-codeowners')""
+        if: "!contains(github.event.pull_request.labels.*.name, 'update-codeowners')"
         env:
           GITHUB_PULL_REQUEST_HEAD_SHA: ${{ github.pull_request.head.sha }}
         run: |
