@@ -1,0 +1,16 @@
+name: Verify requested approvers
+on:
+  pull_request_review:
+    types: [submitted]
+jobs:
+  verifyApproval:
+    name: Verify approvals
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if approver is from requested reviewers
+        if: github.event.review.state == 'approved'
+        uses: actions/github-script@v6.4.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log(context);
