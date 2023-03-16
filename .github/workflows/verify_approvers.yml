@@ -13,12 +13,13 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            console.log(context.payload.review);
-            console.log(context.payload.review.state);
-            console.log(context.payload.review.user.login);
+            console.log(context);
 
-            console.log(context.pull_request)
+            const { payload: { pull_request: { number } }, repository: { owner, name }, review: { state, user: { login } } } = context;
 
-            //const { payload: { pull_request: issue_number }, repo: { owner, repo } } = context;
+            console.log(state);
+            console.log(login);
+            console.log(number);
+            console.log(owner);
 
             //github.rest.pulls.listRequestedReviewers({''})
