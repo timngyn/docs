@@ -1,4 +1,4 @@
-name: Verify requested approvers
+name: Verify Approvers
 on:
   pull_request_review:
     types: [submitted]
