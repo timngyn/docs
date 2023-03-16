@@ -15,7 +15,7 @@ jobs:
           script: |
             console.log(context);
 
-            const { payload: { pull_request: { number }, repository: { owner, name }, review: { state, user: { login } } } = context;
+            const { payload: { pull_request: { number }, repository: { owner, name }, review: { state, user: { login } } } } = context;
 
             console.log(state);
             console.log(login);
