@@ -13,4 +13,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            console.log(github.event.review);
             console.log(context);
