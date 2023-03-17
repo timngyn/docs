@@ -23,7 +23,7 @@ jobs:
 
             const reviewers = await github.rest.pulls.listRequestedReviewers({owner: ownerLogin, repo: name, pull_number: number});
 
-            const { data: { users, teams } } = requestedReviewers;
+            const { data: { users, teams } } = reviewers;
             // need to also check that all the reviewers actually approved
 
             const reviews = await github.rest.pulls.listReviews({owner: ownerLogin, repo: name, pull_number: number});
