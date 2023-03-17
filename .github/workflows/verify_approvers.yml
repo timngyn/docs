@@ -15,13 +15,13 @@ jobs:
           script: |
             console.log(context);
 
-            const { payload: { pull_request: { number }, repository: { owner: { login }, name }, review: { state, user: { login } } } } = context;
+            const { payload: { pull_request: { number }, repository: { owner: { login: ownerLogin }, name }, review: { state, user: { login } } } } = context;
 
             console.log(state);
             console.log(login);
             console.log(number);
-            console.log(owner);
+            console.log(ownerLogin);
 
-            const result = github.rest.pulls.listRequestedReviewers({owner, name, number});
+            const result = github.rest.pulls.listRequestedReviewers({ownerLogin, name, number});
 
             console.log(result);
