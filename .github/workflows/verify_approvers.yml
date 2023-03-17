@@ -22,4 +22,4 @@ jobs:
 
             const result = await github.rest.pulls.listRequestedReviewers({owner: ownerLogin, repo: name, pull_number: number});
 
-            console.log(result);
+            console.log(result.data);
