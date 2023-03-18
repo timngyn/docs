@@ -1,8 +1,20 @@
 name: Verify Approvers
 on:
+  pull_request:
+    types: [review_requested]
   pull_request_review:
     types: [submitted]
 jobs:
+  commentListOfReviewers:
+    name: Track list of reviewers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment with the list of reviewers
+        uses: actions/github-script@v6.4.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log(context);
   verifyApproval:
     name: Verify approvals
     runs-on: ubuntu-latest
@@ -12,7 +24,6 @@ jobs:
         uses: actions/github-script@v6.4.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          result-encoding: string
           script: |
             console.log(context);
 
