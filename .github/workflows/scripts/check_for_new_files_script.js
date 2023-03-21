@@ -30,9 +30,9 @@ module.exports = async ({ github, context, fetch, ignore }) => {
     repo: { owner, repo }
   } = context;
   if (filesNotInCodeowners.length > 0) {
-    const needCodeownersUpdateComment = `CODEOWNERS need to be updated because these new files are not covered:\n
-              ${filesNotInCodeowners.map((e) => `- ${e}\n`).join('')}
-             `;
+    const files = filesNotInCodeowners.map((e) => `- ${e}\n`).join('');
+
+    const needCodeownersUpdateComment = `CODEOWNERS need to be updated because these new files are not covered:\n ${files}`;
     github.rest.issues.createComment({
       owner,
       repo,
