@@ -1,5 +1,5 @@
 module.exports = {
-  getAddedFiles: ({ github, context }) => {
+  getAddedFiles: ({ github, context, core }) => {
     const {
       issue: { number: issue_number },
       repo: { owner, repo }
