@@ -31,5 +31,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const script = require('./scripts/check_for_new_files_script.js');
+            const script = require('/scripts/check_for_new_files_script.js');
             script({github, context})
