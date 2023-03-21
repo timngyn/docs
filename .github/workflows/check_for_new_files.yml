@@ -34,5 +34,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const ignore = require('ignore');
             const script = require('./.github/workflows/scripts/check_for_new_files_script.js');
-            script({github, context});
+            script({github, context, ignore});
