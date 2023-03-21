@@ -36,4 +36,4 @@ jobs:
           script: |
             const ignore = require('ignore');
             const script = require('./.github/workflows/scripts/check_for_new_files_script.js');
-            script({github, context, ignore});
+            script({github, context, fetch, ignore});

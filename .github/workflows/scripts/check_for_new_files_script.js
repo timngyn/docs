@@ -1,4 +1,4 @@
-module.exports = async ({ github, context, ignore }) => {
+module.exports = async ({ github, context, fetch, ignore }) => {
   const { NEW_FILES } = process.env;
 
   const response = await fetch(
