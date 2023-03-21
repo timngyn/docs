@@ -20,10 +20,8 @@ jobs:
 
             github.paginate('GET /repos/{owner}/{repo}/pulls/{pull_number}/files', { owner, repo, pull_number: issue_number },
               (response) => response.data.filter((file) => file.status === 'added')).then((files) => { core.exportVariable("NEW_FILES", files);
-              core.exportVariable("NEW_FILES_COUNT", files.length)});
-      - name: Print out added files
-        run: |
-          echo "New files: ${{ env.NEW_FILES }}"
+              core.exportVariable("NEW_FILES_COUNT", files.length);
+              console.log(files)});
       - name: Install npm package ignore
         if: ${{ env.NEW_FILES_COUNT > 0 }}
         run: yarn add ignore -W # help verify CODEOWNERS
@@ -51,9 +49,9 @@ jobs:
             const ig = ignore().add(codeownersFilePatterns);
             const filesNotInCodeowners = [];
 
-            NEW_FILES.split(' ').forEach(newFile => {
-              if (!ig.ignores(newFile)) {
-                console.log(`${newFile} is not covered by CODEOWNERS`);
+            JSON.parse(NEW_FILES).forEach(newFile => {
+              if (!ig.ignores(newFile.filename)) {
+                console.log(`${newFile.filename} is not covered by CODEOWNERS`);
                 filesNotInCodeowners.push(newFile);
               }
             });
