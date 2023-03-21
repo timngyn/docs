@@ -19,8 +19,8 @@ jobs:
             const { issue: { number: issue_number }, repo: { owner, repo } } = context;
 
             github.paginate('GET /repos/{owner}/{repo}/pulls/{pull_number}/files', { owner, repo, pull_number: issue_number },
-              (response) => response.data.filter((file) => file.status === 'added')).then((files) => { core.setOutput("NEW_FILES", files);
-              core.setOutput("NEW_FILES_COUNT", files.length)});
+              (response) => response.data.filter((file) => file.status === 'added')).then((files) => { core.exportVariable("NEW_FILES", files);
+              core.exportVariable("NEW_FILES_COUNT", files.length)});
       - name: Print out added files
         run: |
           echo "New files: ${{ env.NEW_FILES }}"
