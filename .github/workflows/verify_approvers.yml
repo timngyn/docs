@@ -27,5 +27,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { verifyApproval } = require('./.github/workflows/scripts/verify_approvals.js');
-            verifyApproval({github, context});
+            const { verifyApprovers } = require('./.github/workflows/scripts/verify_approvers.js');
+            verifyApprovers({github, context});
