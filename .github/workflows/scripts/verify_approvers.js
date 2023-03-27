@@ -32,7 +32,8 @@ module.exports = {
       data: { users, teams }
     } = reviewers;
 
-    console.log('listRequestedReviewers: ', data);
+    console.log('listRequestedReviewers users: ', users);
+    console.log('listRequestedReviewers teams: ', users);
 
     // need to also check that all the reviewers actually approved
 
