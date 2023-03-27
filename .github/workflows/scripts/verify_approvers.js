@@ -31,6 +31,9 @@ module.exports = {
     const {
       data: { users, teams }
     } = reviewers;
+
+    console.log(reviewers);
+
     // need to also check that all the reviewers actually approved
 
     const reviews = await github.rest.pulls.listReviews({
