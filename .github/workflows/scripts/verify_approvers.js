@@ -32,7 +32,7 @@ module.exports = {
       data: { users, teams }
     } = reviewers;
 
-    console.log(reviewers);
+    console.log('listRequestedReviewers: ', reviewers);
 
     // need to also check that all the reviewers actually approved
 
@@ -42,6 +42,6 @@ module.exports = {
       pull_number: number
     });
 
-    console.log(reviews.data);
+    console.log('listReviews: ', reviews.data);
   }
 };
