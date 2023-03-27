@@ -1,6 +1,6 @@
 module.exports = {
   commentListOfReviewers: () => {},
-  verifyApproval: async () => {
+  verifyApproval: async ({ github, context }) => {
     console.log(context);
 
     const {
