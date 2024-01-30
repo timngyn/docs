@@ -27,11 +27,5 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::789362886327:role/docs_test_s3_sync_role
           aws-region: us-east-1
-      - name: Read secrets from AWS Secrets Manager into environment variables
-        uses: aws-actions/aws-secretsmanager-get-secrets@022e8919774ecb75e8e375656d7b1898936ab878 # v1.0.4
-        with:
-          secret-ids: |
-            docs_s3_bucket_name_test
-          parse-json-secrets: true
       - name: Sync build output
         run: aws s3 cp ./client/www/next-build s3://aws-amplify-docs-export-bucket --recursive
