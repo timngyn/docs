@@ -28,4 +28,4 @@ jobs:
           role-to-assume: arn:aws:iam::789362886327:role/docs_test_s3_sync_role
           aws-region: us-east-1
       - name: Sync build output
-        run: aws s3 cp ./client/www/next-build s3://aws-amplify-docs-export-bucket --recursive
+        run: aws s3 sync ./client/www/next-build s3://aws-amplify-docs-export-bucket --delete
