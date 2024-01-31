@@ -6,8 +6,6 @@ on:
 permissions:
   contents: read
   id-token: write
-env:
-  BUILD_DIRECTORY: client/www/next-build
 jobs:
   SyncToS3:
     runs-on: ubuntu-latest
@@ -31,11 +29,11 @@ jobs:
           aws-region: us-east-1
       - name: Remove unnecessary files
         run: |
-          rm -rf ./${{env.BUILD_DIRECTORY}}/_next
-          rm -rf ./${{env.BUILD_DIRECTORY}}/images
-          rm -rf ./${{env.BUILD_DIRECTORY}}/videos
-          rm -rf ./${{env.BUILD_DIRECTORY}}/assets
-          rm -rf ./${{env.BUILD_DIRECTORY}}/fonts
+          rm -rf ./client/www/next-build/_next
+          rm -rf ./client/www/next-build/images
+          rm -rf ./client/www/next-build/videos
+          rm -rf ./client/www/next-build/assets
+          rm -rf ./client/www/next-build/fonts
       - name: Sync build output
         run: | 
           aws s3 sync ./client/www/next-build s3://aws-amplify-docs-export-bucket --delete
