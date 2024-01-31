@@ -37,3 +37,17 @@ jobs:
       - name: Sync build output
         run: | 
           aws s3 sync ./client/www/next-build s3://aws-amplify-docs-export-bucket --delete
+      - name: Count files in S3 bucket
+        run: echo "s3FileCount=$(aws s3 ls s3://aws-amplify-docs-export-bucket --recursive | wc -l)" >> $GITHUB_ENV
+      - name: Count files in local directory
+        run: echo "localFileCount=$(find ./client/www/next-build -type f | wc -l)" >> $GITHUB_ENV
+      - name: Validate sync
+        run: |
+          if [ ${{ env.s3FileCount }} -eq ${{ env.localFileCount }} ]; then
+            echo "File counts are equal"
+          else
+            echo "File counts are not equal"
+            echo "S3 count: ${{ env.s3FileCount }}"
+            echo "Local count: ${{ env.localFileCount }}"
+            exit 1
+          fi
