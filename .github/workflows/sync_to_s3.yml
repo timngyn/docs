@@ -29,5 +29,4 @@ jobs:
           aws-region: us-east-1
       - name: Sync build output
         run: | 
-          aws configure set default.s3.preferred_transfer_client crt 
           aws s3 sync ./client/www/next-build s3://aws-amplify-docs-export-bucket --delete
