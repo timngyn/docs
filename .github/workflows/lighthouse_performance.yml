@@ -42,4 +42,10 @@ jobs:
           sleep 5
       - name: Run Lighthouse
         run: |
+          pages=${{steps.pages-to-test-performance.outputs.result}}
+
+          for page in $pages; do
+            echo "$page"
+          done
+
           lighthouse http://localhost:3000 --config-path=${{env.CONFIG_PATH}} --quiet --chrome-flags="--headless" --output json --output-path ./performance-run.json 
