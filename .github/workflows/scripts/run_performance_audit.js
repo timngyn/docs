@@ -2,13 +2,24 @@ module.exports = {
   runPerformanceAudit: async (pages) => {
     const core = require('@actions/core');
     const fs = require('fs');
-    const {default: lighthouse} = await import('lighthouse');
+    const { default: lighthouse } = await import('lighthouse');
     const chromeLauncher = await import('chrome-launcher');
-    const {default: lighthouseConfig} = await import('../lighthouse_configs/performance.mjs');
+    // const { default: lighthouseConfig } = await import('../lighthouse_configs/performance.mjs');
 
     const chrome = await chromeLauncher.launch({chromeFlags: ['--headless']});
 
     const scores = [];
+
+    const config = {
+      extends: 'lighthouse:default',
+      settings: {
+        formFactor: 'desktop',
+        screenEmulation: {
+          mobile: false
+        },
+        onlyCategories: ['performance']
+      }
+    };
 
     for (const page of pages) {
       const options = {
@@ -16,7 +27,7 @@ module.exports = {
         port: chrome.port
       };
 
-      const runnerResult = await lighthouse(`http://localhost:3000${page}/`, options, lighthouseConfig);
+      const runnerResult = await lighthouse(`http://localhost:3000${page}/`, options, config);
   
       // `.report` is the HTML report as a string
       const reportHtml = runnerResult.report;
