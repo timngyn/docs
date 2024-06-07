@@ -33,7 +33,7 @@ jobs:
             const buildDir = process.env.BUILD_DIR;
             return getChangedPages({github, context, buildDir});
       - name: Run site
-        run: | 
+        run: |
           npx serve ${{ env.BUILD_DIR }} &
           sleep 5
       - name: Run Lighthouse performance audit
