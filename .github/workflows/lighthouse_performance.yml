@@ -23,8 +23,6 @@ jobs:
         run: yarn build
         env:
           NODE_OPTIONS: --max_old_space_size=4096
-      - name: Install lighthouse cli
-        run: yarn global add lighthouse
       - name: Get changed/new pages to run lighthouse performance audit on
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         id: pages-to-test-performance
@@ -34,18 +32,17 @@ jobs:
             const { getChangedPages } = require('./.github/workflows/scripts/check_for_changed_pages.js');
             const buildDir = process.env.BUILD_DIR;
             return getChangedPages({github, context, buildDir});
-      - name: Print pages
-        run: echo "${{steps.pages-to-test-performance.outputs.result}}"
       - name: Run site
         run: | 
-          python -m http.server 3000 -d ${{ env.BUILD_DIR }} &
+          npx serve ${{ env.BUILD_DIR }} &
           sleep 5
-      - name: Run Lighthouse
+      - name: Run Lighthouse performance audit
         run: |
-          pages=${{steps.pages-to-test-performance.outputs.result}}
-
-          for page in $pages; do
-            echo "$page"
-          done
-
-          lighthouse http://localhost:3000 --config-path=${{env.CONFIG_PATH}} --quiet --chrome-flags="--headless" --output json --output-path ./performance-run.json 
+          const { runPerformanceAudit } = require('./.github/workflows/scripts/run_performance_audit.js');
+          const pages = ${{ steps.pages-to-test-performance.outputs.result }}
+          return await runPerformanceAudit(pages)
+      - name: Save Lighthouse reports to artifacts
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        with:
+          name: lighthouse-performance-results
+          path: LH_performance*.html
