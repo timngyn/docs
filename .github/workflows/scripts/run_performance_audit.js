@@ -48,7 +48,8 @@ module.exports = {
 
     if (scores.some((score) => score < PERFORMANCE_SCORE_FAILURE_THRESHOLD)) {
       core.setFailed(
-        `Pages have performance score less than ${PERFORMANCE_SCORE_FAILURE_THRESHOLD}.`
+        `Pages have performance score less than ${PERFORMANCE_SCORE_FAILURE_THRESHOLD}. 
+View the workflow Summary on Github to download the full HTML report from the artifacts section.`
       );
     }
   }
