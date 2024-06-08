@@ -38,6 +38,7 @@ module.exports = {
       const reportHtml = runnerResult.report;
       const reportTitle = `LH_performance${page.replaceAll('/', '_')}.html`;
       fs.writeFileSync(reportTitle, reportHtml);
+      reports.push(reportTitle);
 
       console.log('Report is done for', runnerResult.lhr.finalDisplayedUrl);
 
