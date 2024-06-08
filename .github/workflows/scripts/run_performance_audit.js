@@ -54,7 +54,7 @@ module.exports = {
       await artifact.uploadArtifact(
         'lighthouse-performance-results',
         reports.map((report) => `./${report}`),
-        './'
+        '.'
       );
     } catch (e) {
       console.log(e);
