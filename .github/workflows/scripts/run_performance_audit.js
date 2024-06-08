@@ -5,6 +5,8 @@ module.exports = {
     const PERFORMANCE_SCORE_FAILURE_THRESHOLD = 50;
 
     const core = require('@actions/core');
+    const { DefaultArtifactClient } = require('@actions/artifact');
+    const artifact = new DefaultArtifactClient();
     const fs = require('fs');
     const { default: lighthouse } = await import('lighthouse');
     const chromeLauncher = await import('chrome-launcher');
@@ -16,8 +18,10 @@ module.exports = {
     const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
 
     const scores = [];
+    const reports = [];
 
     console.log('Running report on these pages:', pages.join(', '));
+    console.log('\n');
 
     for (const page of pages) {
       const options = {
@@ -32,19 +36,23 @@ module.exports = {
       );
 
       const reportHtml = runnerResult.report;
-      fs.writeFileSync(
-        `LH_performance${page.replaceAll('/', '_')}.html`,
-        reportHtml
-      );
+      const reportTitle = `LH_performance${page.replaceAll('/', '_')}.html`;
+      fs.writeFileSync(reportTitle, reportHtml);
 
       console.log('Report is done for', runnerResult.lhr.finalDisplayedUrl);
 
       const score = runnerResult.lhr.categories.performance.score * 100;
       scores.push(score);
       console.log('Performance score was', score);
+      console.log('\n');
     }
 
     chrome.kill();
+
+    await artifact.uploadArtifact(
+      'lighthouse-performance-results',
+      reports.map((report) => `./${report}`)
+    );
 
     if (scores.some((score) => score < PERFORMANCE_SCORE_FAILURE_THRESHOLD)) {
       core.setFailed(

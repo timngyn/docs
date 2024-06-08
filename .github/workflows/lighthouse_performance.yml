@@ -43,8 +43,3 @@ jobs:
             const { runPerformanceAudit } = require('./.github/workflows/scripts/run_performance_audit.js');
             const pages = ${{ steps.pages-to-test-performance.outputs.result }};
             return await runPerformanceAudit(pages);
-      - name: Save Lighthouse reports to artifacts
-        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
-        with:
-          name: lighthouse-performance-results
-          path: LH_performance*.html
