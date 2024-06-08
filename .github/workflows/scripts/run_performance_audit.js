@@ -50,10 +50,7 @@ module.exports = {
 
     chrome.kill();
 
-    await artifact.uploadArtifact(
-      'lighthouse-performance-results',
-      reports.map((report) => `./${report}`)
-    );
+    await artifact.uploadArtifact('lighthouse-performance-results', reports);
 
     if (scores.some((score) => score < PERFORMANCE_SCORE_FAILURE_THRESHOLD)) {
       core.setFailed(
